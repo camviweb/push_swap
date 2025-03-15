@@ -1,11 +1,12 @@
 # Projet en cours ♻️
 - Trier des données sur une pile, avec un set d’instructions limité, en moins de coups possibles.
 - Pour le réussir, vous devrez manipuler différents algorithmes de tri et choisir la (ou les ?) solution la plus appropriée pour un classement optimisé des données. 
-- Page 4/15 done
+- Page 7/15 done
 
 ### Keywords
 - Algorithmes de tri
 - Notion de pile et éléments de manipulation
+- Complexite (le + vite possible)
 
 ## To code
 - [ ] Implementer algorithme
@@ -16,8 +17,9 @@
 
 ## To test
 - [ ] norminette
+- [ ] x segmentation fault x bus error x double free, ds cas limites definis 
 - [ ] visualiser/franci/checker 
 - [ ] file names/git repo
-- [ ] (guidelines -> main)
+- [ ] (guidelines -> main/tests)
 - [ ] valgrind (no leaks)
 - [ ] "your Makefile must not relink"
