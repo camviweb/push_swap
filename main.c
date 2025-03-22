@@ -4,9 +4,12 @@ int	main(int argc, char **argv)
 {
 	int	i;
 	int	a;
-	int	b;
-	int	c;
 
+	// int	b;
+	// int	c;
+	// vrmt utile ?
+	if (argc == 1)
+		return (0);
 	i = 1;
 	if (argc == 3)
 	{
@@ -14,7 +17,7 @@ int	main(int argc, char **argv)
 		{
 		}
 	}
-    if (argc == 4)
+	if (argc == 4)
 	{
 		while (i < argc)
 		{
@@ -22,8 +25,26 @@ int	main(int argc, char **argv)
 	}
 	while (i < argc)
 	{
-		ft_printf("%d", ft_atoi(argv[i++]));
+		a = ft_atoi(argv[i]);
+		ft_printf("%d", a);
+		if (is_number(argv[i]) == 0)
+		{
+			write(2, "Error\n", 6);
+			return (0);
+		}
+		i++;
 	}
+}
+
+int	is_number(char *s)
+{
+	while (*s)
+	{
+		if (!ft_isdigit(*s))
+			return (0);
+		s++;
+	}
+	return (1);
 }
 
 // Intervertit les 2 premiers éléments au sommet de la pile a. Ne fait rien s’il n’y en a qu’un ou aucun.
@@ -38,6 +59,7 @@ void	swapb(void)
 	ft_printf("\nsb");
 }
 
+// prob affichage
 void	ss(void)
 {
 	swapa();
@@ -46,6 +68,7 @@ void	ss(void)
 }
 
 // Prend le premier élément au sommet de b et le met sur a. Ne fait rien si b est vide.
+// remettre les autres nombres bien, use rotation ?
 void	pusha(void)
 {
 	ft_printf("\npa");
@@ -71,7 +94,7 @@ void	rotateb(void)
 
 void	rr(void)
 {
-	rotatea(); // issue, affichage 
+	rotatea();
 	rotateb();
 	ft_printf("\nrr");
 }

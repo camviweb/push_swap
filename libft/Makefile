@@ -41,14 +41,19 @@ SRC 	=ft_isalpha.c \
 	ft_putptr.c \
 	ft_putstr.c \
 	ft_putunbr.c
+BONUS_SRC = ft_lstnew_bonus.c
 NAME	= libft.a
 OBJD	=obj
 OBJ		=$(SRC:%.c=$(OBJD)/%.o)
+BONUS_OBJ		=$(BONUS_SRC:%.c=$(OBJD)/%.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rcs -o $@ $^
+
+bonus: $(OBJ) $(BONUS_OBJ)
+	ar rcs -o $(NAME) $^
 
 $(OBJD)/%.o: %.c | $(OBJD)
 	$(CC) -o $@ -c $<
