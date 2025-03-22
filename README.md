@@ -8,10 +8,11 @@
 - Complexite (le + vite possible)
 
 ## To code
-- [ ] Si aucun paramètre n’est spécifié, le programme (s'arrete -> return) ne doit rien afficher et rendre l’invite de commande.
+- [ ] parsing arguments propre
 - [ ] En cas d’erreur, vous devez afficher "Error" suivi d’un ’\n’ sur la sortie d’erreur. Si certains paramètres ne sont pas des nombres, ne tiennent pas dans un int, ou encore, s’il y a des doublons
-- [ ] parsing arguments
-- [ ] avec "", sans, variable 
+- [ ] avec "", sans, variable
+- [ ] structure : **liste chainee** circulaire ou tableau (index ?) ou liste doublement chainee
+- [ ] actions (why code instructions ?)
 - [ ] Implementer l'algorithme de tri (turc, radix)
 - [ ] 1 ens/liste d'entiers (?) donc pas de doublon (+ou-) -> logiciel, cmb ? 
 - [ ] creer 2 piles (pile a: 1 **liste**/pile/ens (?) **d'entiers** et b: vide) -> attention a l'ordre 
@@ -24,8 +25,6 @@
 - [ ] exit ?
 - [ ] bon affichage \n
 - [ ] normalize the list/your data -> radix sort 
-- [ ] why code instructions ?
-- [ ] **liste chainee** ou stack with index (tableau et structure)
 
 ## To test
 - [ ] 80% : trier 100 nombres aléatoires en moins de 700 opérations (moyenne, mais vous devriez toujours avoir au max moins de 700 opérations pour effectuer le tri complet) -> cas ou tri plus long ?
