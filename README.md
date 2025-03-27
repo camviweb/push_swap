@@ -33,7 +33,7 @@
 - [ ] executer commandes pour test vrmt trier -> checker 
 - [ ] x segmentation fault x bus error x double free, ds cas limites definis 
 - [ ] visualizer/franci/checker 
-- [ ] make fclean, enlever checker -> file names/git repo
+- [ ] make fclean, enlever checker -> file names/git repo (enlever -fPIC)
 - [ ] (guidelines -> main/tests : 3 exemples subject)
 - [ ] valgrind (no leaks)
 - [ ] "your Makefile must not relink"
