@@ -1,119 +1,72 @@
 #include "push_swap.h"
+// a enlever
+#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
-	int	i;
-	int	a;
+	t_lists	*stacks;
 
-	// int	b;
-	// int	c;
-	// vrmt utile ?
-	if (argc == 1)
+	// pourquoi 2 et pas 3 ?
+	// remplacer t_list par t_dlist ?
+	stacks = malloc(2 * sizeof(t_ilist));
+	// to check
+	if (stacks == NULL)
 		return (0);
+	if (argc == 1)
+		finish(stacks);
+	if (argc == 2)
+		// probablement cast en 'const char'
+		argv = ft_split(argv[1], ' ');
+	stacks = parse(stacks, argc, argv);
+	ft_printf("parse : ");
+	lstprint(stacks->a);
+	write (1, "\n", 1);
+	stacks = sort(stacks);
+	ft_printf("sorte a : ");
+	lstprint(stacks->a);
+	write (1, "\n", 1);
+	ft_printf("sorte b : ");
+	lstprint(stacks->b);
+	write (1, "\n", 1);
+	free(stacks);
+	return (0);
+}
+
+t_lists	*parse(t_lists *stacks, int argc, char **argv)
+{
+	int	i;
+	long	tmp;
+
 	i = 1;
-	if (argc == 3)
+	if (argc == 2)
+		i = 0;
+	while (argv[i])
 	{
-		while (i < argc)
-		{
-		}
-	}
-	if (argc == 4)
-	{
-		while (i < argc)
-		{
-		}
-	}
-	while (i < argc)
-	{
-		a = ft_atoi(argv[i]);
-		ft_printf("%d", a);
-		if (is_number(argv[i]) == 0)
-		{
-			write(2, "Error\n", 6);
-			return (0);
-		}
+		if (!is_number(argv[i]))
+			finish(stacks);
+		tmp = ft_atol(argv[i]);
+		printf("nb : %ld\n", tmp);
+		if (tmp > 2147483647 || tmp < -2147483648)
+			finish(stacks);
+		if (doublon(stacks->a, tmp))
+			finish(stacks);
+		if (!stacks->a)
+			stacks->a = lstnew(tmp); 
+		else
+			lstadd_back(&stacks->a, lstnew(tmp));
 		i++;
 	}
+	return (stacks);
 }
 
-int	is_number(char *s)
+t_lists	*sort(t_lists *stacks)
 {
-	while (*s)
-	{
-		if (!ft_isdigit(*s))
-			return (0);
-		s++;
-	}
-	return (1);
-}
+	int	len;
 
-// Intervertit les 2 premiers éléments au sommet de la pile a. Ne fait rien s’il n’y en a qu’un ou aucun.
-void	swapa(void)
-{
-	ft_printf("\nsa");
-}
-
-// Intervertit les 2 premiers éléments au sommet de la pile b. Ne fait rien s’il n’y en a qu’un ou aucun.
-void	swapb(void)
-{
-	ft_printf("\nsb");
-}
-
-// prob affichage
-void	ss(void)
-{
-	swapa();
-	swapb();
-	ft_printf("\nss");
-}
-
-// Prend le premier élément au sommet de b et le met sur a. Ne fait rien si b est vide.
-// remettre les autres nombres bien, use rotation ?
-void	pusha(void)
-{
-	ft_printf("\npa");
-}
-
-// Prend le premier élément au sommet de a et le met sur b. Ne fait rien si a est vide.
-void	pushb(void)
-{
-	ft_printf("\npb");
-}
-
-// Décale d’une position vers le haut tous les élements de la pile a. Le premier élément devient le dernier.
-void	rotatea(void)
-{
-	ft_printf("\nra");
-}
-
-// Décale d’une position vers le haut tous les élements de la pile b. Le premier élément devient le dernier.
-void	rotateb(void)
-{
-	ft_printf("\nrb");
-}
-
-void	rr(void)
-{
-	rotatea();
-	rotateb();
-	ft_printf("\nrr");
-}
-
-// Décale d’une position vers le bas tous les élements de la pile a. Le dernier élément devient le premier.
-void	reverserotatea(void)
-{
-	ft_printf("\nrra");
-}
-
-// Décale d’une position vers le bas tous les élements de la pile b. Le dernier élément devient le premier.
-void	reverserotateb(void)
-{
-	ft_printf("\nrrb");
-}
-
-void	rrr(void)
-{
-	reverserotatea();
-	reverserotateb();
-	ft_printf("\nrrr");
+	len = lstsize(stacks->a);
+	if (len <= 5)
+		stacks = easy_sort(stacks);
+	else
+		stacks = turkish_sort(stacks);
+	return (stacks);
 }
