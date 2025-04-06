@@ -40,8 +40,18 @@ SRC 	=ft_isalpha.c \
 	ft_putnbr.c \
 	ft_putptr.c \
 	ft_putstr.c \
-	ft_putunbr.c
-BONUS_SRC = ft_lstnew_bonus.c
+	ft_putunbr.c \
+	ft_atol.c
+BONUS_SRC = ft_lstnew_bonus.c \
+ft_lstadd_front_bonus.c \
+ft_lstadd_back_bonus.c \
+ft_lstsize_bonus.c \
+ft_lstlast_bonus.c \
+		# ft_lstdelone_bonus.c \
+		# ft_lstclear_bonus.c \
+		# ft_lstiter_bonus.c \
+		# ft_lstmap_bonus.c \
+
 NAME	= libft.a
 OBJD	=obj
 OBJ		=$(SRC:%.c=$(OBJD)/%.o)
@@ -62,7 +72,7 @@ $(OBJD):
 	mkdir -p $(OBJD)
 
 clean:
-	rm -f *.o
+	rm -rf $(OBJD)
 
 fclean: clean
 	rm -f $(NAME)

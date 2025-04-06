@@ -72,7 +72,7 @@ t_lists *rotateb_to_pos(t_lists *stacks, int pos)
 			stacks = rotateb(stacks);
 	else
 		while (pos++ < size)
-			stacks = reverseb(stacks);
+			stacks = reverserotateb(stacks);
 	return (stacks);
 }
 

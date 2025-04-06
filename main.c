@@ -7,7 +7,6 @@ int	main(int argc, char **argv)
 	t_lists	*stacks;
 
 	// pourquoi 2 et pas 3 ?
-	// remplacer t_list par t_dlist ?
 	stacks = malloc(2 * sizeof(t_ilist));
 	// to check
 	if (stacks == NULL)
