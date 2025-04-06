@@ -14,7 +14,7 @@ t_lists	*easy_sort(t_lists *stacks)
 	else if (lstsize(stacks->a) == 4)
 		stacks = sort4(stacks);
 	else
-        stacks = sort5(stacks);
+		stacks = sort5(stacks);
 	return (stacks);
 }
 
@@ -35,5 +35,20 @@ t_lists	*sort5(t_lists *stacks)
 
 t_lists	*turkish_sort(t_lists *stacks)
 {
-	return (reverserotatea(stacks));
+	t_ilist *current;
+	int pos;
+
+	while (lstsize(stacks->a) > 0)
+	{
+		current = stacks->a;
+		pos = pos_in_b(stacks->b, current->content);
+		stacks = rotateb_to_pos(stacks, pos);
+		stacks = pushb(stacks);
+	}
+	stacks = rotateb_to_max(stacks);
+	while (lstsize(stacks->b) > 0)
+		stacks = pusha(stacks);
+
+	return (stacks);
+	// return (reverserotatea(stacks));
 }
