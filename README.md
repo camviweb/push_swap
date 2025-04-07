@@ -25,7 +25,7 @@
 - [ ] norminette : structures dans un autre .h ?
 - [ ] executer commandes pour test vrmt trier -> checker 
 - [ ] x segmentation fault x bus error x double free, ds cas limites definis 
-- [ ] visualizer/franci/checker 
+- [ ] franci/checker
 - [ ] make fclean, enlever checker -> file names/git repo
 - [ ] (guidelines -> main/tests : 3 exemples subject)
 - [ ] valgrind (no leaks)
