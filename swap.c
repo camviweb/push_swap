@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: canguyen <canguyen@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/07 11:37:35 by canguyen          #+#    #+#             */
+/*   Updated: 2025/04/07 11:37:37 by canguyen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 // Intervertit les 2 premiers éléments au sommet de la pile a. Ne fait rien s’il n’y en a qu’un ou aucun.
@@ -31,6 +43,8 @@ t_ilist	*lstswap(t_ilist *one)
 	t_ilist *tmp;
 	t_ilist *two;
 
+	if (!one)
+		return (NULL);
 	tmp = one;
 	two = one->next;
 	one = two;

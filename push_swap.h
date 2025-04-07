@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: canguyen <canguyen@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/07 11:34:21 by canguyen          #+#    #+#             */
+/*   Updated: 2025/04/07 11:34:31 by canguyen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-
 # include "libft/libft.h"
 
 typedef struct s_ilist
@@ -40,6 +51,18 @@ int					lstsize(t_ilist *lst);
 t_ilist				*lstlast(t_ilist *lst);
 void				lstadd_back(t_ilist **lst, t_ilist *new);
 void				cleanlst(t_ilist *lst);
+int					max_lst(t_ilist *b);
+int					min_lst(t_ilist *b);
+int					pos_in_b(t_ilist *b, int n);
+t_lists				*rotateb_to_pos(t_lists *stacks, int pos);
+t_lists				*rotatea_to_pos(t_lists *stacks, int pos);
+t_lists				*rotateb_to_max(t_lists *stacks);
+int					max_pos(t_ilist *b);
+int					get_value(t_ilist *b, int pos);
+int					is_sorted(t_lists *stacks);
+t_ilist				*max_node(t_ilist *lst);
+int					get_pos(t_ilist *lst, int val);
+t_lists				*rotate_to_poss(t_lists *stacks, int pos, int posa);
 // void	ft_lstdelone(t_list *lst, void (*del)(void *));
 // void	ft_lstclear(t_list **lst, void (*del)(void *));
 // void	ft_lstiter(t_list *lst, void (*f)(void *));

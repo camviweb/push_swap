@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverserotate.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: canguyen <canguyen@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/07 11:37:06 by canguyen          #+#    #+#             */
+/*   Updated: 2025/04/07 11:37:08 by canguyen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 // Décale d’une position vers le bas tous les élements de la pile a. Le dernier élément devient le premier.
@@ -32,8 +44,8 @@ t_ilist	*lstreverserotate(t_ilist *lst)
 	t_ilist *penultimate;
 	t_ilist *current;
 
-	// if (!lst)
-	// 	return (NULL); // ou return lst
+	if (!lst)
+		return (NULL);
 	current = lst;
     while (current->next)
     {

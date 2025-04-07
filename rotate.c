@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: canguyen <canguyen@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/07 11:37:14 by canguyen          #+#    #+#             */
+/*   Updated: 2025/04/07 11:37:17 by canguyen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-// Décale d’une position vers le haut tous les élements de la pile a. Le premier élément devient le dernier.
 t_lists	*rotatea(t_lists *stacks)
 {
 	write(1, "ra\n", 3);
@@ -28,11 +39,11 @@ t_lists	*rr(t_lists *stacks)
 
 t_ilist	*lstrotate(t_ilist *lst)
 {
-	t_ilist *two;
-	t_ilist *last;
+	t_ilist	*two;
+	t_ilist	*last;
 
-	// if (!lst)
-	// 	return (NULL);
+	if (!lst)
+		return (NULL);
 	last = lstlast(lst);
 	two = lst->next;
 	// two->prev = NULL;

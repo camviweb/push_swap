@@ -6,6 +6,7 @@ utils.c \
 sorts.c \
 lst_utils1.c \
 lst_utils2.c \
+lst_utils3.c \
 swap.c \
 push.c \
 rotate.c \

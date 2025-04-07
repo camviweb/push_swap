@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lst_utils1.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: canguyen <canguyen@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/07 11:28:02 by canguyen          #+#    #+#             */
+/*   Updated: 2025/04/07 11:28:18 by canguyen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 t_ilist	*lstnew(int content)
@@ -20,7 +32,7 @@ void	lstadd_front(t_ilist **lst, t_ilist *new)
 
 t_ilist	*lstlast(t_ilist *lst)
 {
-	t_ilist *tmp;
+	t_ilist	*tmp;
 
 	if (!lst)
 		return (NULL);
@@ -32,19 +44,19 @@ t_ilist	*lstlast(t_ilist *lst)
 
 void	lstadd_back(t_ilist **lst, t_ilist *new)
 {
-    t_ilist	*last;
+	t_ilist	*last;
 
 	last = lstlast(*lst);
 	if (!last)
 		*lst = new;
-    else
-	    last->next = new;
+	else
+		last->next = new;
 }
 
 int	lstsize(t_ilist *lst)
 {
-	t_ilist *tmp;
-	unsigned int i;
+	t_ilist			*tmp;
+	unsigned int	i;
 
 	tmp = lst;
 	i = 0;

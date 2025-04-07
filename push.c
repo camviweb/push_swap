@@ -1,7 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: canguyen <canguyen@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/07 11:31:03 by canguyen          #+#    #+#             */
+/*   Updated: 2025/04/07 11:31:06 by canguyen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-// Prend le premier élément au sommet de b et le met sur a. Ne fait rien si b est vide.
-// remettre les autres nombres bien, use rotation ?
 t_lists	*pusha(t_lists *stacks)
 {
 	write(1, "pa\n", 3);
