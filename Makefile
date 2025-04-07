@@ -1,7 +1,15 @@
 CFLAGS	=-Wall -Wextra -Werror
 CC		=cc $(CFLAGS)
 NAME	=push_swap
-SRC 	=main.c 
+SRC 	=main.c \
+utils.c \
+sorts.c \
+lst_utils1.c \
+lst_utils2.c \
+swap.c \
+push.c \
+rotate.c \
+reverserotate.c
 OBJD	=obj
 OBJ		=$(SRC:%.c=$(OBJD)/%.o)
 LIBFTD	=libft
