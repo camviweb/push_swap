@@ -46,8 +46,6 @@ t_ilist	*lstrotate(t_ilist *lst)
 		return (NULL);
 	last = lstlast(lst);
 	two = lst->next;
-	// two->prev = NULL;
-	// lst->prev = last;
 	lst->next = NULL;
 	last->next = lst;
 	lst = two;

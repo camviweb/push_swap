@@ -13,8 +13,6 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "libft/libft.h"
-// keep ?
-# include <limits.h>
 
 typedef struct s_ilist
 {
@@ -38,39 +36,34 @@ t_lists				*normalize(t_lists *stacks);
 t_lists				*easy_sort(t_lists *stacks);
 t_lists				*sort3(t_lists *stacks);
 t_lists				*sort4(t_lists *stacks);
-// t_lists				*sort5(t_lists *stacks);
+t_lists				*sort5(t_lists *stacks);
 t_lists				*radix_sort(t_lists *stacks);
-t_lists				*chunked_radix_sort(t_lists *stacks);
 
-// utils
-void				finish(t_lists *stacks);
-int					is_number(char *s);
-void				lstprint(t_ilist *lst);
-int					doublon(t_ilist *a, int nb);
-t_ilist				*min_node(t_ilist *a);
-t_ilist				*max_node(t_ilist *a);
-
-// listes chainees
+// utils 1
 t_ilist				*lstnew(int content);
 void				lstadd_front(t_ilist **lst, t_ilist *new);
-int					lstsize(t_ilist *lst);
 t_ilist				*lstlast(t_ilist *lst);
 void				lstadd_back(t_ilist **lst, t_ilist *new);
-void				cleanlst(t_ilist *lst);
-int					max_lst(t_ilist *b);
+int					lstsize(t_ilist *lst);
+
+// utils 2
 int					min_lst(t_ilist *b);
-int					pos_in_b(t_ilist *b, int n);
-t_lists				*rotateb_to_pos(t_lists *stacks, int pos);
-t_lists				*rotateb_to_max(t_lists *stacks);
-int					max_pos(t_ilist *b);
-int					get_value(t_ilist *b, int pos);
-int					is_sorted(t_lists *stacks);
-// t_ilist				*max_node(t_ilist *lst);
+int					max_lst(t_ilist *b);
+t_ilist				*min_node(t_ilist *a);
+t_ilist				*max_node(t_ilist *a);
 int					get_pos(t_ilist *lst, int val);
-// void	ft_lstdelone(t_list *lst, void (*del)(void *));
-// void	ft_lstclear(t_list **lst, void (*del)(void *));
-// void	ft_lstiter(t_list *lst, void (*f)(void *));
-// t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+// utils 3
+t_lists				*rotate_to_a_min(t_lists *stacks);
+int					is_sorted(t_lists *stacks);
+int					find_max_bits(t_lists *stacks);
+
+// utils 4
+void				finish(t_lists *stacks);
+void				lstprint(t_ilist *lst);
+int					is_number(char *s);
+int					doublon(t_ilist *a, int nb);
+void				cleanlst(t_ilist *lst);
 
 // instructions
 t_lists				*swapa(t_lists *stacks);

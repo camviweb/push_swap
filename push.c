@@ -39,8 +39,6 @@ t_lists	*lstpusha(t_lists *stacks)
 	tmp = stacks->b->next;
 	free(stacks->b);
 	stacks->b = tmp;
-	// if (ps_lstsize(stacks->b) > 0)
-	// 	stacks->b->prev = NULL;
 	return (stacks);
 }
 
@@ -57,7 +55,5 @@ t_lists	*lstpushb(t_lists *stacks)
 	tmp = stacks->a->next;
 	free(stacks->a);
 	stacks->a = tmp;
-	// if (ps_lstsize(stacks->b) > 0)
-	// 	stacks->b->prev = NULL;
 	return (stacks);
 }

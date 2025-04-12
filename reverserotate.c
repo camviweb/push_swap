@@ -12,7 +12,6 @@
 
 #include "push_swap.h"
 
-// Décale d’une position vers le bas tous les élements de la pile a. Le dernier élément devient le premier.
 t_lists	*reverserotatea(t_lists *stacks)
 {
 	write(1, "rra\n", 4);
@@ -40,18 +39,18 @@ t_lists	*rrr(t_lists *stacks)
 
 t_ilist	*lstreverserotate(t_ilist *lst)
 {
-	t_ilist *last;
-	t_ilist *penultimate;
-	t_ilist *current;
+	t_ilist	*last;
+	t_ilist	*penultimate;
+	t_ilist	*current;
 
 	if (!lst)
 		return (NULL);
 	current = lst;
-    while (current->next)
-    {
-        penultimate = current;
-        current = current->next;
-    }
+	while (current->next)
+	{
+		penultimate = current;
+		current = current->next;
+	}
 	penultimate->next = NULL;
 	last = current;
 	last->next = lst;

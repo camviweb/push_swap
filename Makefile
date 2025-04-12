@@ -2,11 +2,11 @@ CFLAGS	=-Wall -Wextra -Werror
 CC		=cc $(CFLAGS)
 NAME	=push_swap
 SRC 	=main.c \
-utils.c \
+utils1.c \
+utils2.c \
+utils3.c \
+utils4.c \
 sorts.c \
-lst_utils1.c \
-lst_utils2.c \
-lst_utils3.c \
 swap.c \
 push.c \
 rotate.c \
