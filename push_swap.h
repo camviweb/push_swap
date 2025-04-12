@@ -13,6 +13,8 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "libft/libft.h"
+// keep ?
+# include <limits.h>
 
 typedef struct s_ilist
 {
@@ -30,19 +32,23 @@ typedef struct s_lists
 // main
 t_lists				*parse(t_lists *stacks, int argc, char **argv);
 t_lists				*sort(t_lists *stacks);
+t_lists				*normalize(t_lists *stacks);
 
 // sorts
 t_lists				*easy_sort(t_lists *stacks);
 t_lists				*sort3(t_lists *stacks);
 t_lists				*sort4(t_lists *stacks);
-t_lists				*sort5(t_lists *stacks);
-t_lists				*turkish_sort(t_lists *stacks);
+// t_lists				*sort5(t_lists *stacks);
+t_lists				*radix_sort(t_lists *stacks);
+t_lists				*chunked_radix_sort(t_lists *stacks);
 
 // utils
 void				finish(t_lists *stacks);
 int					is_number(char *s);
 void				lstprint(t_ilist *lst);
 int					doublon(t_ilist *a, int nb);
+t_ilist				*min_node(t_ilist *a);
+t_ilist				*max_node(t_ilist *a);
 
 // listes chainees
 t_ilist				*lstnew(int content);
@@ -55,14 +61,12 @@ int					max_lst(t_ilist *b);
 int					min_lst(t_ilist *b);
 int					pos_in_b(t_ilist *b, int n);
 t_lists				*rotateb_to_pos(t_lists *stacks, int pos);
-t_lists				*rotatea_to_pos(t_lists *stacks, int pos);
 t_lists				*rotateb_to_max(t_lists *stacks);
 int					max_pos(t_ilist *b);
 int					get_value(t_ilist *b, int pos);
 int					is_sorted(t_lists *stacks);
-t_ilist				*max_node(t_ilist *lst);
+// t_ilist				*max_node(t_ilist *lst);
 int					get_pos(t_ilist *lst, int val);
-t_lists				*rotate_to_poss(t_lists *stacks, int pos, int posa);
 // void	ft_lstdelone(t_list *lst, void (*del)(void *));
 // void	ft_lstclear(t_list **lst, void (*del)(void *));
 // void	ft_lstiter(t_list *lst, void (*f)(void *));

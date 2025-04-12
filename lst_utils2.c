@@ -91,32 +91,18 @@ t_lists	*rotateb_to_pos(t_lists *stacks, int pos)
 	return (stacks);
 }
 
-t_lists	*rotatea_to_pos(t_lists *stacks, int pos)
-{
-	int	size;
-
-	size = lstsize(stacks->a);
-	if (pos <= size / 2)
-		while (pos-- > 0)
-			stacks = rotatea(stacks);
-	else
-		while (pos++ < size)
-			stacks = reverserotatea(stacks);
-	return (stacks);
-}
-
-t_ilist *max_node(t_ilist *lst)
-{
-	t_ilist *max;
-	t_ilist *tmp;
+// t_ilist *max_node(t_ilist *lst)
+// {
+// 	t_ilist *max;
+// 	t_ilist *tmp;
 	
-	max = lst;
-	tmp = lst;
-	while (tmp)
-	{
-		if (tmp->content > max->content)
-			max = tmp;
-		tmp = tmp->next;
-	}
-	return max;
-}
+// 	max = lst;
+// 	tmp = lst;
+// 	while (tmp)
+// 	{
+// 		if (tmp->content > max->content)
+// 			max = tmp;
+// 		tmp = tmp->next;
+// 	}
+// 	return max;
+// }
