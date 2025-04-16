@@ -81,6 +81,8 @@ t_lists	*radix_sort(t_lists *stacks)
 	int	j;
 	int	max_bits;
 
+	if (is_sorted(stacks))
+		return (stacks);
 	size = lstsize(stacks->a);
 	max_bits = find_max_bits(stacks);
 	i = 0;
