@@ -62,3 +62,29 @@ int	find_max_bits(t_lists *stacks)
 		max_bits++;
 	return (max_bits);
 }
+
+void	ft_free_split(char **lst)
+{
+	int	i;
+
+	if (!lst)
+		return ;
+	i = 0;
+	while (lst[i])
+	{
+		free(lst[i]);
+		lst[i] = NULL;
+		i++;
+	}
+	free(lst);
+}
+
+void	finish(t_lists *stacks, char **lst, int split)
+{
+	cleanlst(stacks->a);
+	cleanlst(stacks->b);
+	free(stacks);
+	if (split == 1)
+		ft_free_split(lst);
+	exit(1);
+}

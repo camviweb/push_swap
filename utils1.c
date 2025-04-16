@@ -58,6 +58,8 @@ int	lstsize(t_ilist *lst)
 	t_ilist			*tmp;
 	unsigned int	i;
 
+	if (!lst)
+		return (0);
 	tmp = lst;
 	i = 0;
 	while (tmp)

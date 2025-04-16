@@ -12,9 +12,13 @@
 
 #include "push_swap.h"
 
-void	finish(t_lists *stacks)
+void	error(t_lists *stacks, char **lst, int split)
 {
+	cleanlst(stacks->a);
+	cleanlst(stacks->b);
 	free(stacks);
+	if (split == 1)
+		ft_free_split(lst);
 	write(2, "Error\n", 6);
 	exit(1);
 }

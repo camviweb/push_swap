@@ -15,45 +15,55 @@
 int	main(int argc, char **argv)
 {
 	t_lists	*stacks;
+	char	**lst;
+	int		split;
 
+	split = 0;
+	lst = argv;
 	stacks = malloc(sizeof(t_lists));
+	stacks->a = NULL;
+	stacks->b = NULL;
+	stacks->count = 0;
 	if (stacks == NULL)
 		return (1);
 	if (argc == 1)
-		finish(stacks);
+		finish(stacks, lst, split);
 	if (argc == 2)
-		argv = ft_split(argv[1], ' ');
-	stacks = parse(stacks, argc, argv);
+	{
+		lst = ft_split(argv[1], ' ');
+		split = 1;
+	}
+	stacks = parse(stacks, argc, lst, split);
 	stacks = sort(stacks);
-	cleanlst(stacks->a);
-	cleanlst(stacks->b);
-	free(stacks);
+	finish(stacks, lst, split);
 	return (0);
 }
 
-t_lists	*parse(t_lists *stacks, int argc, char **argv)
+t_lists	*parse(t_lists *stacks, int count, char **lst, int split)
 {
 	int			i;
 	long long	tmp;
 
 	i = 1;
-	if (argc == 2)
+	if (count == 2)
 		i = 0;
-	while (argv[i])
+	while (lst[i])
 	{
-		if (!is_number(argv[i]))
-			finish(stacks);
-		tmp = ft_atol(argv[i]);
+		if (!is_number(lst[i]))
+			error(stacks, lst, split);
+		tmp = ft_atol(lst[i]);
 		if (tmp > 2147483647 || tmp < -2147483648)
-			finish(stacks);
-		if (doublon(stacks->a, tmp))
-			finish(stacks);
+			error(stacks, lst, split);
+		if (stacks->a && doublon(stacks->a, tmp))
+			error(stacks, lst, split);
 		if (!stacks->a)
 			stacks->a = lstnew(tmp);
 		else
 			lstadd_back(&stacks->a, lstnew(tmp));
 		i++;
 	}
+	if (i == 1)
+		finish(stacks, lst, split);
 	return (stacks);
 }
 

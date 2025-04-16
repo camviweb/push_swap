@@ -28,7 +28,7 @@ typedef struct s_lists
 }					t_lists;
 
 // main
-t_lists				*parse(t_lists *stacks, int argc, char **argv);
+t_lists				*parse(t_lists *stacks, int argc, char **lst, int split);
 t_lists				*sort(t_lists *stacks);
 t_lists				*normalize(t_lists *stacks);
 
@@ -57,9 +57,11 @@ int					get_pos(t_ilist *lst, int val);
 t_lists				*rotate_to_a_min(t_lists *stacks);
 int					is_sorted(t_lists *stacks);
 int					find_max_bits(t_lists *stacks);
+void				ft_free_split(char **lst);
+void				finish(t_lists *stacks, char **lst, int split);
 
 // utils 4
-void				finish(t_lists *stacks);
+void				error(t_lists *stacks, char **lst, int split);
 void				lstprint(t_ilist *lst);
 int					is_number(char *s);
 int					doublon(t_ilist *a, int nb);
