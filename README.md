@@ -17,7 +17,7 @@
 ## Utilisation 
 Compilation:
 ```bash
-make all
+make
 ```
 Execution sans checker:
 ```bash
