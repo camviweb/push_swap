@@ -1,4 +1,4 @@
-# Projet en cours ♻️
+# Projet valide ♻️
 ![validation](./push_swap.png)
 
 ## Description 
